@@ -15,14 +15,17 @@ const questions = [
         answer: 0
     },
     {
-        type: "audio", // soal berbasis audio
-        instruction: "Dengarkan cuplikan lagu berikut dan tebak judulnya...",
-        content: "blindingstw.mp3",
+        type: "text", // soal berbasis teks
+        instruction: "Tebak judul lagu berdasarkan lirik berikut...",
+        content: `I never wanted to stop
+Because I don't wanna start all over, start all over
+I was afraid of the dark
+But now it's all that I want, all that I want, all that I want`,
         options: [
-            "A. It Will Rain - Bruno Mars",
-            "B. Blinding Lights - The Weeknd",
-            "C. Shape of You - Ed Sheeran",
-            "D. Heartbreak Anniversary - GIVEON"
+            "A. The Scientist - Coldplay",
+            "B. Daylight - Maroon 5",
+            "C. Another Love - Tom Odell",
+            "D. Car's Outside - James Arthur"
         ],
         answer: 1
     },
@@ -72,22 +75,16 @@ Stuck in reverse`,
         answer: 1
     },
     {
-        type: "audio", // soal berbasis audio
-        instruction: "Dengarkan cuplikan lagu berikut dan tebak judulnya...",
-        content: "roarkp.mp3",
-        options: [
-            "A. Anti-Hero - Taylor Swift",
-            "B. Firework - Katy Perry",
-            "C. Hello - Adele",
-            "D. Roar - Katy Perry"
-        ],
-        answer: 3
+        type: "image",
+        instruction: "Siapa nama penyanyi di gambar ini?",
+        content: "assets/images/thewknd.jpg",
+        answers: ["The Weeknd", "the weeknd", "TheWeeknd", "The weeknd", "the Weeknd"]
     },
     {
         type: "image",
         instruction: "Siapa nama penyanyi di gambar ini?",
         content: "assets/images/TaylorSwift.jpg",
-        answers: ["Taylor Swift", "taylor swift", "Taylor Alison Swift", "TaylorSwift", "Taylor swift"]
+        answers: ["Taylor Swift", "taylor swift", "Taylor Alison Swift", "TaylorSwift", "Taylor swift", "taylor Swift"]
     },
     {
         type: "image",
@@ -120,16 +117,16 @@ Stuck in reverse`,
         answer: 1
     },
     {
-        type: "audio", // soal berbasis audio
-        instruction: "Dengarkan cuplikan lagu berikut dan tebak judulnya...",
-        content: "snstz.mp3",
+        type: "text",
+        instruction: "Tebak judul lagu berdasarkan lirik berikut...",
+        content: `Come stop your crying It will be alright, Just take my hand Hold it tight, I will protect you From all around you, I will be here Don't you cry`,
         options: [
-            "A. Cry - Cigarettes After S*x",
-            "B. Apocalypse - Cigarettes After S*x",
-            "C. Let Her Go - Passenger",
-            "D. Sunsetz - Cigarettes After S*x"
+            "A. Say Yes To Heaven - Lana Del Rey",
+            "B. SNAP - Rosa Linn",
+            "C. You'll Be In My Heart  - NIKI",
+            "D. Never Be The Same - Camila Cabello"
         ],
-        answer: 3
+        answer: 2
     },
     {
         type: "text",
@@ -195,7 +192,7 @@ Got a long list of ex-lovers`,
         instruction: "Baca penjelasan berikut dan pilih apakah pernyataan ini benar atau salah.",
         content: "Album pertama Taylor Swift adalah Fearless, yang dirilis pada 11 November 2008.",
         answer: 1, // 0 untuk 'Benar', 1 untuk 'Salah'
-        fact: "Album pertama Taylor adalah Tayor Swift, yang dirilis pada 24 Oktober 2006."
+        fact: "Album pertama Taylor berjudul Tayor Swift, yang dirilis pada 24 Oktober 2006."
     },
     {
         type: "image",

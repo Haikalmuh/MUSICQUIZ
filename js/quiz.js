@@ -345,8 +345,8 @@ nextBtn.addEventListener("click", () => {
   <hr>
   <p><strong>Kredit & Disclaimer:</strong></p>
   <p>
-    Semua gambar dan audio digunakan hanya untuk keperluan pribadi dan non-komersial. Hak cipta dimiliki oleh pemilik aslinya.
-    Gambar penyanyi dan cover album diperoleh dari Pinterest, Wikipedia, dan sumber terbuka lainnya. Audio berasal dari Spotify atau cuplikan lagu asli sebagai bagian dari media edukatif.
+    Semua visual yang digunakan dalam kuis ini hanya untuk keperluan pribadi dan non-komersial. 
+    Hak cipta tetap menjadi milik masing-masing pemilik asli konten. Sumber gambar diperoleh dari Pinterest, Wikipedia, dan sumber terbuka lainnya.
   </p>
 </div>
         `;
