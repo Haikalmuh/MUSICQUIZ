@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Quiz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/quiz.css">
+</head>
+
+<body>
+    <div class="quiz-container">
+        <!-- Bagian Atas -->
+        <div class="quiz-header">
+            <h2 class="question-count"></h2>
+        </div>
+
+        <!-- Konten Soal -->
+        <div class="quiz-card">
+            <p class="question-instruction"></p>
+            <p class="question-text"></p>
+
+            <!-- Pilihan Jawaban -->
+            <div class="options"></div>
+
+            <!-- Tombol Jawab -->
+            <button class="submit-btn" disabled>Jawab</button>
+
+            <!-- Feedback & Selanjutnya -->
+            <div class="feedback hidden"></div>
+            <button class="next-btn hidden">Selanjutnya</button>
+
+            <!-- Poin -->
+            <div class="score-display" id="score">Poin: 0</div>
+        </div>
+    </div>
+
+    <script src="js/questions.js"></script>
+    <script src="js/quiz.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,408 @@
+body {
+    background-color: #4c00b0;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-color 0.4s ease;
+}
+
+.quiz-container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.quiz-header {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.quiz-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.6s ease;
+    position: relative;
+}
+
+.question-count {
+    color: white;
+}
+
+.question-text {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #1338be;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Styling player audio agar lebih menarik */
+.question-text audio {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    outline: none;
+    background-color: orange;
+    padding: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+.question-instruction {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #0000ff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.option-btn {
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    text-align: left;
+    font-weight: 600;
+    width: 100%;
+    max-width: 500px;
+    background-color: white;
+    color: black;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.option-btn:hover {
+    background-color: #f0f0f0;
+    border-color: #999;
+}
+
+.option-btn.selected {
+    outline: 2px solid #0000ff;
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+}
+
+.singer-image {
+    max-width: 180px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto 15px;
+}
+
+.text-input,
+textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+    display: block;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    resize: vertical;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.text-input:focus,
+textarea:focus {
+    border-color: #0000ff;
+    box-shadow: 0 0 6px rgba(92, 158, 255, 0.5);
+    outline: none;
+}
+
+.lyric-dropzone {
+    min-height: 60px;
+    border: 2px dashed #aaa;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: #f5f5f5;
+    justify-content: center;
+}
+
+.lyric-bank {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.lyric-block {
+    background-color: #E9D5FF;
+    color: #4B0082;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s, opacity 0.3s ease;
+}
+
+.lyric-block:hover {
+    background-color: #A78BFA;
+}
+
+.lyric-block.animate-in {
+    animation: fadeInMove 0.3s ease;
+}
+
+/* poin */
+.score-display {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #4c00b0;
+    border: 2px solid #4c00b0;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background-color: #f9f5ff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Tombol Jawab */
+.submit-btn {
+    padding: 10px 20px;
+    background-color: #6A5ACD;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+
+    /* Tambahan posisi di tengah */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Tombol Selanjutnya */
+.next-btn {
+    padding: 10px 20px;
+    background-color: #6A5ACD;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+
+    /* Tambahan posisi di kanan */
+    display: block;
+    margin-left: auto;
+}
+
+.submit-btn:hover,
+.next-btn:hover {
+    background-color: #5548b8;
+}
+
+.submit-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.feedback {
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.feedback.green {
+    color: #4CAF50;
+}
+
+.feedback.red {
+    color: #F44336;
+}
+
+/* Efek saat penilaian */
+.option-btn.correct {
+    background-color: #4CAF50 !important;
+    /* Hijau terang */
+    color: white !important;
+    font-weight: bold;
+    opacity: 1 !important;
+}
+
+.option-btn.wrong {
+    background-color: #F44336 !important;
+    /* Merah */
+    color: white !important;
+    font-weight: bold;
+    opacity: 1 !important;
+}
+
+.option-btn.correct::before {
+    content: "\f00c";
+    /* Unicode untuk fa-check */
+    font-family: "Font Awesome 6 Free";
+    /* Nama font-nya */
+    font-weight: 900;
+    /* Wajib 900 untuk solid icon */
+    font-style: normal;
+    /* Tambahan agar tidak miring */
+    display: inline-block;
+    margin-right: 8px;
+    color: white;
+    font-size: 16px;
+    /* Atur ukuran */
+}
+
+.option-btn.wrong::before {
+    content: "\f00d";
+    /* Unicode untuk fa-xmark atau fa-times */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-style: normal;
+    display: inline-block;
+    margin-right: 8px;
+    color: white;
+    font-size: 16px;
+}
+
+
+.option-btn.faded {
+    opacity: 0.6;
+}
+
+.hidden {
+    display: none;
+}
+
+.feedback {
+    font-size: 15px;
+}
+
+
+.quiz-credits {
+    margin-top: 40px;
+    font-size: 12px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    color: #333;
+}
+
+
+/* .restart-btn {
+    margin-top: 20px;
+    padding: 10px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #4c00b0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.restart-btn:hover {
+    background-color: #37007f;
+} */
+
+
+/* Animasi */
+@keyframes fadeInMove {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .quiz-card {
+        padding: 20px;
+    }
+
+    .question-text,
+    .question-instruction {
+        font-size: 1rem;
+    }
+
+    .submit-btn,
+    .next-btn {
+        width: 100%;
+        font-size: 0.95rem;
+    }
+
+    .feedback {
+        font-size: 13px;
+    }
+
+    .question-count {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .quiz-card {
+        padding-bottom: 65px;
+        /* Tambahin ruang buat poin di bawah tombol */
+    }
+
+    .score-display {
+        left: 20px;
+        bottom: 15px;
+    }
+}
