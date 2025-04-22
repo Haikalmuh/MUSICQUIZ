@@ -17,7 +17,7 @@ const questions = [
     {
         type: "audio", // soal berbasis audio
         instruction: "Dengarkan cuplikan lagu berikut dan tebak judulnya...",
-        content: "public/blindingstw.mp3",
+        content: "blindingstw.mp3",
         options: [
             "A. It Will Rain - Bruno Mars",
             "B. Blinding Lights - The Weeknd",
@@ -74,7 +74,7 @@ Stuck in reverse`,
     {
         type: "audio", // soal berbasis audio
         instruction: "Dengarkan cuplikan lagu berikut dan tebak judulnya...",
-        content: "public/roarkp.mp3",
+        content: "roarkp.mp3",
         options: [
             "A. Anti-Hero - Taylor Swift",
             "B. Firework - Katy Perry",
@@ -122,7 +122,7 @@ Stuck in reverse`,
     {
         type: "audio", // soal berbasis audio
         instruction: "Dengarkan cuplikan lagu berikut dan tebak judulnya...",
-        content: "public/snstz.mp3",
+        content: "snstz.mp3",
         options: [
             "A. Cry - Cigarettes After S*x",
             "B. Apocalypse - Cigarettes After S*x",
